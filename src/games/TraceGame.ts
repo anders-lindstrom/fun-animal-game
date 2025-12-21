@@ -19,54 +19,131 @@ interface AnimalShape {
 
 // Simple animal shapes made of connected points - organized by difficulty
 const ANIMALS: AnimalShape[] = [
-  // Easy shapes (fewer points)
+  // Easy shapes - simple animals kids love
   {
-    name: 'Circle',
-    emoji: '🔵',
+    name: 'Mouse',
+    emoji: '🐭',
     difficulty: 'easy',
     points: [
-      { x: 0.5, y: 0.25 },
-      { x: 0.75, y: 0.5 },
+      { x: 0.3, y: 0.35 },  // left ear
+      { x: 0.4, y: 0.45 },
+      { x: 0.5, y: 0.35 },  // top of head
+      { x: 0.6, y: 0.45 },
+      { x: 0.7, y: 0.35 },  // right ear
+      { x: 0.65, y: 0.55 },
+      { x: 0.5, y: 0.65 },  // chin
+      { x: 0.35, y: 0.55 },
+      { x: 0.3, y: 0.35 },
+    ]
+  },
+  {
+    name: 'Pig',
+    emoji: '🐷',
+    difficulty: 'easy',
+    points: [
+      { x: 0.25, y: 0.4 },
+      { x: 0.35, y: 0.25 },  // left ear
+      { x: 0.5, y: 0.3 },
+      { x: 0.65, y: 0.25 },  // right ear
+      { x: 0.75, y: 0.4 },
+      { x: 0.75, y: 0.6 },
       { x: 0.5, y: 0.75 },
-      { x: 0.25, y: 0.5 },
-      { x: 0.5, y: 0.25 },
+      { x: 0.25, y: 0.6 },
+      { x: 0.25, y: 0.4 },
     ]
   },
   {
-    name: 'Square',
-    emoji: '🟧',
+    name: 'Chick',
+    emoji: '🐥',
     difficulty: 'easy',
     points: [
-      { x: 0.25, y: 0.25 },
-      { x: 0.75, y: 0.25 },
-      { x: 0.75, y: 0.75 },
-      { x: 0.25, y: 0.75 },
-      { x: 0.25, y: 0.25 },
-    ]
-  },
-  {
-    name: 'Triangle',
-    emoji: '🔺',
-    difficulty: 'easy',
-    points: [
-      { x: 0.5, y: 0.2 },
-      { x: 0.8, y: 0.8 },
-      { x: 0.2, y: 0.8 },
+      { x: 0.5, y: 0.2 },   // top
+      { x: 0.7, y: 0.35 },
+      { x: 0.75, y: 0.55 },
+      { x: 0.6, y: 0.75 },
+      { x: 0.4, y: 0.75 },
+      { x: 0.25, y: 0.55 },
+      { x: 0.3, y: 0.35 },
       { x: 0.5, y: 0.2 },
     ]
   },
-  // Medium shapes
   {
-    name: 'House',
-    emoji: '🏠',
+    name: 'Apple',
+    emoji: '🍎',
+    difficulty: 'easy',
+    points: [
+      { x: 0.5, y: 0.2 },   // stem top
+      { x: 0.5, y: 0.3 },   // stem bottom
+      { x: 0.7, y: 0.35 },
+      { x: 0.8, y: 0.55 },
+      { x: 0.65, y: 0.8 },
+      { x: 0.35, y: 0.8 },
+      { x: 0.2, y: 0.55 },
+      { x: 0.3, y: 0.35 },
+      { x: 0.5, y: 0.3 },
+    ]
+  },
+  // Medium shapes - more detailed animals
+  {
+    name: 'Cat Face',
+    emoji: '🐱',
     difficulty: 'medium',
     points: [
-      { x: 0.25, y: 0.5 },
-      { x: 0.5, y: 0.25 },
+      { x: 0.2, y: 0.5 },   // left cheek
+      { x: 0.2, y: 0.3 },   // left ear bottom
+      { x: 0.3, y: 0.15 },  // left ear tip
+      { x: 0.4, y: 0.3 },   // left ear inner
+      { x: 0.5, y: 0.25 },  // forehead
+      { x: 0.6, y: 0.3 },   // right ear inner
+      { x: 0.7, y: 0.15 },  // right ear tip
+      { x: 0.8, y: 0.3 },   // right ear bottom
+      { x: 0.8, y: 0.5 },   // right cheek
+      { x: 0.7, y: 0.7 },
+      { x: 0.5, y: 0.8 },   // chin
+      { x: 0.3, y: 0.7 },
+      { x: 0.2, y: 0.5 },
+    ]
+  },
+  {
+    name: 'Dog Face',
+    emoji: '🐶',
+    difficulty: 'medium',
+    points: [
+      { x: 0.15, y: 0.4 },  // left ear
+      { x: 0.2, y: 0.6 },
+      { x: 0.25, y: 0.35 },
+      { x: 0.4, y: 0.3 },
+      { x: 0.5, y: 0.25 },  // top of head
+      { x: 0.6, y: 0.3 },
+      { x: 0.75, y: 0.35 },
+      { x: 0.8, y: 0.6 },   // right ear
+      { x: 0.85, y: 0.4 },
+      { x: 0.75, y: 0.55 },
+      { x: 0.7, y: 0.75 },
+      { x: 0.5, y: 0.85 },  // chin/snout
+      { x: 0.3, y: 0.75 },
+      { x: 0.25, y: 0.55 },
+      { x: 0.15, y: 0.4 },
+    ]
+  },
+  {
+    name: 'Bunny',
+    emoji: '🐰',
+    difficulty: 'medium',
+    points: [
+      { x: 0.35, y: 0.1 },  // left ear tip
+      { x: 0.38, y: 0.35 }, // left ear base
+      { x: 0.5, y: 0.35 },  // between ears
+      { x: 0.62, y: 0.35 }, // right ear base
+      { x: 0.65, y: 0.1 },  // right ear tip
+      { x: 0.68, y: 0.35 },
       { x: 0.75, y: 0.5 },
-      { x: 0.75, y: 0.8 },
-      { x: 0.25, y: 0.8 },
-      { x: 0.25, y: 0.5 }
+      { x: 0.7, y: 0.7 },
+      { x: 0.5, y: 0.8 },   // chin
+      { x: 0.3, y: 0.7 },
+      { x: 0.25, y: 0.5 },
+      { x: 0.32, y: 0.35 },
+      { x: 0.35, y: 0.1 },
     ]
   },
   {
@@ -74,11 +151,17 @@ const ANIMALS: AnimalShape[] = [
     emoji: '🐟',
     difficulty: 'medium',
     points: [
-      { x: 0.2, y: 0.5 },
-      { x: 0.3, y: 0.35 }, { x: 0.5, y: 0.3 }, { x: 0.7, y: 0.35 },
-      { x: 0.8, y: 0.5 },
-      { x: 0.7, y: 0.65 }, { x: 0.5, y: 0.7 }, { x: 0.3, y: 0.65 },
-      { x: 0.2, y: 0.5 }
+      { x: 0.15, y: 0.5 },  // tail left
+      { x: 0.25, y: 0.35 },
+      { x: 0.4, y: 0.3 },
+      { x: 0.6, y: 0.3 },
+      { x: 0.8, y: 0.4 },
+      { x: 0.85, y: 0.5 },  // nose
+      { x: 0.8, y: 0.6 },
+      { x: 0.6, y: 0.7 },
+      { x: 0.4, y: 0.7 },
+      { x: 0.25, y: 0.65 },
+      { x: 0.15, y: 0.5 },
     ]
   },
   {
@@ -86,28 +169,38 @@ const ANIMALS: AnimalShape[] = [
     emoji: '❤️',
     difficulty: 'medium',
     points: [
-      { x: 0.5, y: 0.8 },
-      { x: 0.25, y: 0.55 }, { x: 0.2, y: 0.35 },
-      { x: 0.3, y: 0.25 }, { x: 0.4, y: 0.28 },
-      { x: 0.5, y: 0.38 },
-      { x: 0.6, y: 0.28 }, { x: 0.7, y: 0.25 },
-      { x: 0.8, y: 0.35 }, { x: 0.75, y: 0.55 },
-      { x: 0.5, y: 0.8 }
+      { x: 0.5, y: 0.85 },  // bottom point
+      { x: 0.25, y: 0.6 },
+      { x: 0.15, y: 0.4 },
+      { x: 0.2, y: 0.25 },
+      { x: 0.35, y: 0.2 },
+      { x: 0.5, y: 0.35 },  // center dip
+      { x: 0.65, y: 0.2 },
+      { x: 0.8, y: 0.25 },
+      { x: 0.85, y: 0.4 },
+      { x: 0.75, y: 0.6 },
+      { x: 0.5, y: 0.85 },
     ]
   },
-  // Hard shapes (more points)
+  // Hard shapes - detailed animals
   {
-    name: 'Cat',
-    emoji: '🐱',
+    name: 'Lion',
+    emoji: '🦁',
     difficulty: 'hard',
     points: [
-      { x: 0.3, y: 0.3 }, { x: 0.25, y: 0.2 }, { x: 0.3, y: 0.25 },
-      { x: 0.5, y: 0.25 },
-      { x: 0.7, y: 0.25 }, { x: 0.75, y: 0.2 }, { x: 0.7, y: 0.3 },
-      { x: 0.75, y: 0.5 }, { x: 0.7, y: 0.7 },
-      { x: 0.5, y: 0.75 },
-      { x: 0.3, y: 0.7 }, { x: 0.25, y: 0.5 },
-      { x: 0.3, y: 0.3 }
+      { x: 0.5, y: 0.1 },   // top of mane
+      { x: 0.7, y: 0.15 },
+      { x: 0.85, y: 0.3 },
+      { x: 0.9, y: 0.5 },   // right mane
+      { x: 0.85, y: 0.7 },
+      { x: 0.7, y: 0.85 },
+      { x: 0.5, y: 0.9 },   // bottom
+      { x: 0.3, y: 0.85 },
+      { x: 0.15, y: 0.7 },
+      { x: 0.1, y: 0.5 },   // left mane
+      { x: 0.15, y: 0.3 },
+      { x: 0.3, y: 0.15 },
+      { x: 0.5, y: 0.1 },
     ]
   },
   {
@@ -115,13 +208,17 @@ const ANIMALS: AnimalShape[] = [
     emoji: '⭐',
     difficulty: 'hard',
     points: [
-      { x: 0.5, y: 0.2 },
-      { x: 0.4, y: 0.45 }, { x: 0.2, y: 0.45 },
-      { x: 0.35, y: 0.6 }, { x: 0.3, y: 0.85 },
-      { x: 0.5, y: 0.7 },
-      { x: 0.7, y: 0.85 }, { x: 0.65, y: 0.6 },
-      { x: 0.8, y: 0.45 }, { x: 0.6, y: 0.45 },
-      { x: 0.5, y: 0.2 }
+      { x: 0.5, y: 0.1 },   // top point
+      { x: 0.42, y: 0.38 },
+      { x: 0.12, y: 0.38 }, // left point
+      { x: 0.35, y: 0.55 },
+      { x: 0.25, y: 0.85 }, // bottom left
+      { x: 0.5, y: 0.68 },
+      { x: 0.75, y: 0.85 }, // bottom right
+      { x: 0.65, y: 0.55 },
+      { x: 0.88, y: 0.38 }, // right point
+      { x: 0.58, y: 0.38 },
+      { x: 0.5, y: 0.1 },
     ]
   },
   {
@@ -129,38 +226,65 @@ const ANIMALS: AnimalShape[] = [
     emoji: '🦋',
     difficulty: 'hard',
     points: [
-      { x: 0.5, y: 0.3 },
-      { x: 0.3, y: 0.2 }, { x: 0.15, y: 0.35 }, { x: 0.2, y: 0.55 },
-      { x: 0.35, y: 0.5 }, { x: 0.5, y: 0.55 },
-      { x: 0.65, y: 0.5 }, { x: 0.8, y: 0.55 },
-      { x: 0.85, y: 0.35 }, { x: 0.7, y: 0.2 },
-      { x: 0.5, y: 0.3 },
-      { x: 0.5, y: 0.8 }
-    ]
-  },
-  // Grown-up shapes (very complex, many points, precision required)
-  {
-    name: 'Treble Clef',
-    emoji: '🎼',
-    difficulty: 'grownup',
-    points: [
-      { x: 0.55, y: 0.85 }, { x: 0.45, y: 0.8 }, { x: 0.4, y: 0.7 },
-      { x: 0.45, y: 0.6 }, { x: 0.55, y: 0.55 }, { x: 0.6, y: 0.45 },
-      { x: 0.55, y: 0.35 }, { x: 0.45, y: 0.32 }, { x: 0.38, y: 0.38 },
-      { x: 0.4, y: 0.5 }, { x: 0.5, y: 0.55 }, { x: 0.55, y: 0.5 },
-      { x: 0.52, y: 0.4 }, { x: 0.5, y: 0.25 }, { x: 0.5, y: 0.15 },
+      { x: 0.5, y: 0.25 },  // top
+      { x: 0.3, y: 0.15 },  // left wing top
+      { x: 0.1, y: 0.3 },
+      { x: 0.15, y: 0.5 },
+      { x: 0.3, y: 0.55 },  // left wing bottom
+      { x: 0.5, y: 0.5 },   // body center
+      { x: 0.7, y: 0.55 },  // right wing bottom
+      { x: 0.85, y: 0.5 },
+      { x: 0.9, y: 0.3 },
+      { x: 0.7, y: 0.15 },  // right wing top
+      { x: 0.5, y: 0.25 },
+      { x: 0.5, y: 0.85 },  // body/tail
     ]
   },
   {
-    name: 'Infinity',
-    emoji: '♾️',
+    name: 'Elephant',
+    emoji: '🐘',
+    difficulty: 'hard',
+    points: [
+      { x: 0.25, y: 0.35 }, // left ear
+      { x: 0.15, y: 0.5 },
+      { x: 0.25, y: 0.55 },
+      { x: 0.3, y: 0.45 },
+      { x: 0.5, y: 0.4 },   // top of head
+      { x: 0.7, y: 0.45 },
+      { x: 0.75, y: 0.55 }, // right ear
+      { x: 0.85, y: 0.5 },
+      { x: 0.75, y: 0.35 },
+      { x: 0.6, y: 0.5 },
+      { x: 0.55, y: 0.7 },  // trunk
+      { x: 0.5, y: 0.85 },
+      { x: 0.45, y: 0.7 },
+      { x: 0.4, y: 0.5 },
+      { x: 0.25, y: 0.35 },
+    ]
+  },
+  // Grown-up shapes (complex, many points)
+  {
+    name: 'Unicorn',
+    emoji: '🦄',
     difficulty: 'grownup',
     points: [
-      { x: 0.5, y: 0.5 }, { x: 0.35, y: 0.35 }, { x: 0.2, y: 0.4 },
-      { x: 0.15, y: 0.5 }, { x: 0.2, y: 0.6 }, { x: 0.35, y: 0.65 },
-      { x: 0.5, y: 0.5 }, { x: 0.65, y: 0.35 }, { x: 0.8, y: 0.4 },
-      { x: 0.85, y: 0.5 }, { x: 0.8, y: 0.6 }, { x: 0.65, y: 0.65 },
-      { x: 0.5, y: 0.5 },
+      { x: 0.5, y: 0.08 },  // horn tip
+      { x: 0.48, y: 0.2 },
+      { x: 0.35, y: 0.15 }, // ear
+      { x: 0.3, y: 0.25 },
+      { x: 0.2, y: 0.35 },
+      { x: 0.15, y: 0.5 },
+      { x: 0.2, y: 0.65 },
+      { x: 0.35, y: 0.75 },  // mane
+      { x: 0.5, y: 0.82 },
+      { x: 0.65, y: 0.75 },
+      { x: 0.8, y: 0.65 },
+      { x: 0.85, y: 0.5 },   // snout
+      { x: 0.8, y: 0.35 },
+      { x: 0.7, y: 0.25 },
+      { x: 0.65, y: 0.15 },  // ear
+      { x: 0.52, y: 0.2 },
+      { x: 0.5, y: 0.08 },
     ]
   },
   {
@@ -168,38 +292,69 @@ const ANIMALS: AnimalShape[] = [
     emoji: '🐉',
     difficulty: 'grownup',
     points: [
-      { x: 0.15, y: 0.4 }, { x: 0.2, y: 0.3 }, { x: 0.28, y: 0.25 },
-      { x: 0.35, y: 0.28 }, { x: 0.4, y: 0.35 }, { x: 0.45, y: 0.3 },
-      { x: 0.5, y: 0.25 }, { x: 0.55, y: 0.3 }, { x: 0.58, y: 0.38 },
-      { x: 0.65, y: 0.35 }, { x: 0.72, y: 0.32 }, { x: 0.78, y: 0.38 },
-      { x: 0.82, y: 0.48 }, { x: 0.78, y: 0.58 }, { x: 0.7, y: 0.62 },
-      { x: 0.6, y: 0.58 }, { x: 0.5, y: 0.6 }, { x: 0.4, y: 0.65 },
-      { x: 0.3, y: 0.62 }, { x: 0.22, y: 0.55 }, { x: 0.18, y: 0.48 },
+      { x: 0.1, y: 0.45 },  // tail
+      { x: 0.2, y: 0.4 },
+      { x: 0.25, y: 0.3 },
+      { x: 0.35, y: 0.25 }, // back spikes
+      { x: 0.4, y: 0.35 },
+      { x: 0.5, y: 0.28 },
+      { x: 0.55, y: 0.38 },
+      { x: 0.65, y: 0.32 },
+      { x: 0.72, y: 0.25 }, // head horns
+      { x: 0.78, y: 0.35 },
+      { x: 0.85, y: 0.45 }, // snout
+      { x: 0.8, y: 0.55 },
+      { x: 0.7, y: 0.6 },
+      { x: 0.55, y: 0.65 },
+      { x: 0.4, y: 0.7 },
+      { x: 0.25, y: 0.65 },
+      { x: 0.15, y: 0.55 },
+      { x: 0.1, y: 0.45 },
     ]
   },
   {
-    name: 'Spiral',
-    emoji: '🌀',
+    name: 'Owl',
+    emoji: '🦉',
     difficulty: 'grownup',
     points: [
-      { x: 0.5, y: 0.5 }, { x: 0.55, y: 0.45 }, { x: 0.58, y: 0.52 },
-      { x: 0.52, y: 0.58 }, { x: 0.42, y: 0.55 }, { x: 0.4, y: 0.45 },
-      { x: 0.48, y: 0.38 }, { x: 0.6, y: 0.4 }, { x: 0.65, y: 0.52 },
-      { x: 0.58, y: 0.65 }, { x: 0.42, y: 0.68 }, { x: 0.3, y: 0.58 },
-      { x: 0.28, y: 0.42 }, { x: 0.38, y: 0.28 }, { x: 0.58, y: 0.25 },
-      { x: 0.72, y: 0.38 }, { x: 0.75, y: 0.58 },
+      { x: 0.3, y: 0.15 },  // left ear tuft
+      { x: 0.35, y: 0.25 },
+      { x: 0.5, y: 0.2 },   // top of head
+      { x: 0.65, y: 0.25 },
+      { x: 0.7, y: 0.15 },  // right ear tuft
+      { x: 0.75, y: 0.3 },
+      { x: 0.8, y: 0.45 },
+      { x: 0.75, y: 0.65 },
+      { x: 0.65, y: 0.8 },  // right wing
+      { x: 0.5, y: 0.85 },
+      { x: 0.35, y: 0.8 },  // left wing
+      { x: 0.25, y: 0.65 },
+      { x: 0.2, y: 0.45 },
+      { x: 0.25, y: 0.3 },
+      { x: 0.3, y: 0.15 },
     ]
   },
   {
-    name: 'Cursive A',
-    emoji: '🔤',
+    name: 'Dolphin',
+    emoji: '🐬',
     difficulty: 'grownup',
     points: [
-      { x: 0.25, y: 0.75 }, { x: 0.35, y: 0.65 }, { x: 0.45, y: 0.45 },
-      { x: 0.5, y: 0.3 }, { x: 0.55, y: 0.35 }, { x: 0.58, y: 0.45 },
-      { x: 0.55, y: 0.55 }, { x: 0.48, y: 0.58 }, { x: 0.42, y: 0.55 },
-      { x: 0.45, y: 0.65 }, { x: 0.55, y: 0.72 }, { x: 0.65, y: 0.7 },
-      { x: 0.75, y: 0.75 },
+      { x: 0.9, y: 0.5 },   // nose
+      { x: 0.8, y: 0.4 },
+      { x: 0.65, y: 0.32 },
+      { x: 0.5, y: 0.25 },  // dorsal fin
+      { x: 0.45, y: 0.35 },
+      { x: 0.3, y: 0.4 },
+      { x: 0.15, y: 0.45 },
+      { x: 0.08, y: 0.5 },  // tail top
+      { x: 0.12, y: 0.55 },
+      { x: 0.08, y: 0.6 },  // tail bottom
+      { x: 0.2, y: 0.55 },
+      { x: 0.35, y: 0.58 },
+      { x: 0.5, y: 0.6 },
+      { x: 0.65, y: 0.58 },
+      { x: 0.8, y: 0.55 },
+      { x: 0.9, y: 0.5 },
     ]
   },
 ];
@@ -334,6 +489,15 @@ export function createTraceGame(onBack: () => void): HTMLElement {
     const points = animal.points;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw faded emoji reference in the background
+    ctx.save();
+    ctx.globalAlpha = 0.15;
+    ctx.font = `${canvas.width * 0.6}px serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(animal.emoji, canvas.width / 2, canvas.height / 2);
+    ctx.restore();
 
     // Draw dotted lines between points
     ctx.setLineDash([10, 10]);
