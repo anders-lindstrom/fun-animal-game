@@ -17,349 +17,290 @@ interface AnimalShape {
   difficulty: 'easy' | 'medium' | 'hard' | 'grownup';
 }
 
-// Simple animal shapes made of connected points - organized by difficulty
+// Shapes organized by difficulty - animals, objects, and letters
 const ANIMALS: AnimalShape[] = [
-  // Easy shapes - simple animals kids love
-  {
-    name: 'Mouse',
-    emoji: '🐭',
-    difficulty: 'easy',
-    points: [
-      { x: 0.3, y: 0.35 },  // left ear
-      { x: 0.4, y: 0.45 },
-      { x: 0.5, y: 0.35 },  // top of head
-      { x: 0.6, y: 0.45 },
-      { x: 0.7, y: 0.35 },  // right ear
-      { x: 0.65, y: 0.55 },
-      { x: 0.5, y: 0.65 },  // chin
-      { x: 0.35, y: 0.55 },
-      { x: 0.3, y: 0.35 },
-    ]
-  },
-  {
-    name: 'Pig',
-    emoji: '🐷',
-    difficulty: 'easy',
-    points: [
-      { x: 0.25, y: 0.4 },
-      { x: 0.35, y: 0.25 },  // left ear
-      { x: 0.5, y: 0.3 },
-      { x: 0.65, y: 0.25 },  // right ear
-      { x: 0.75, y: 0.4 },
-      { x: 0.75, y: 0.6 },
-      { x: 0.5, y: 0.75 },
-      { x: 0.25, y: 0.6 },
-      { x: 0.25, y: 0.4 },
-    ]
-  },
-  {
-    name: 'Chick',
-    emoji: '🐥',
-    difficulty: 'easy',
-    points: [
-      { x: 0.5, y: 0.2 },   // top
-      { x: 0.7, y: 0.35 },
-      { x: 0.75, y: 0.55 },
-      { x: 0.6, y: 0.75 },
-      { x: 0.4, y: 0.75 },
-      { x: 0.25, y: 0.55 },
-      { x: 0.3, y: 0.35 },
-      { x: 0.5, y: 0.2 },
-    ]
-  },
-  {
-    name: 'Apple',
-    emoji: '🍎',
-    difficulty: 'easy',
-    points: [
-      { x: 0.5, y: 0.2 },   // stem top
-      { x: 0.5, y: 0.3 },   // stem bottom
-      { x: 0.7, y: 0.35 },
-      { x: 0.8, y: 0.55 },
-      { x: 0.65, y: 0.8 },
-      { x: 0.35, y: 0.8 },
-      { x: 0.2, y: 0.55 },
-      { x: 0.3, y: 0.35 },
-      { x: 0.5, y: 0.3 },
-    ]
-  },
-  // Medium shapes - more detailed animals
-  {
-    name: 'Cat Face',
-    emoji: '🐱',
-    difficulty: 'medium',
-    points: [
-      { x: 0.2, y: 0.5 },   // left cheek
-      { x: 0.2, y: 0.3 },   // left ear bottom
-      { x: 0.3, y: 0.15 },  // left ear tip
-      { x: 0.4, y: 0.3 },   // left ear inner
-      { x: 0.5, y: 0.25 },  // forehead
-      { x: 0.6, y: 0.3 },   // right ear inner
-      { x: 0.7, y: 0.15 },  // right ear tip
-      { x: 0.8, y: 0.3 },   // right ear bottom
-      { x: 0.8, y: 0.5 },   // right cheek
-      { x: 0.7, y: 0.7 },
-      { x: 0.5, y: 0.8 },   // chin
-      { x: 0.3, y: 0.7 },
-      { x: 0.2, y: 0.5 },
-    ]
-  },
-  {
-    name: 'Dog Face',
-    emoji: '🐶',
-    difficulty: 'medium',
-    points: [
-      { x: 0.15, y: 0.4 },  // left ear
-      { x: 0.2, y: 0.6 },
-      { x: 0.25, y: 0.35 },
-      { x: 0.4, y: 0.3 },
-      { x: 0.5, y: 0.25 },  // top of head
-      { x: 0.6, y: 0.3 },
-      { x: 0.75, y: 0.35 },
-      { x: 0.8, y: 0.6 },   // right ear
-      { x: 0.85, y: 0.4 },
-      { x: 0.75, y: 0.55 },
-      { x: 0.7, y: 0.75 },
-      { x: 0.5, y: 0.85 },  // chin/snout
-      { x: 0.3, y: 0.75 },
-      { x: 0.25, y: 0.55 },
-      { x: 0.15, y: 0.4 },
-    ]
-  },
-  {
-    name: 'Bunny',
-    emoji: '🐰',
-    difficulty: 'medium',
-    points: [
-      { x: 0.35, y: 0.1 },  // left ear tip
-      { x: 0.38, y: 0.35 }, // left ear base
-      { x: 0.5, y: 0.35 },  // between ears
-      { x: 0.62, y: 0.35 }, // right ear base
-      { x: 0.65, y: 0.1 },  // right ear tip
-      { x: 0.68, y: 0.35 },
-      { x: 0.75, y: 0.5 },
-      { x: 0.7, y: 0.7 },
-      { x: 0.5, y: 0.8 },   // chin
-      { x: 0.3, y: 0.7 },
-      { x: 0.25, y: 0.5 },
-      { x: 0.32, y: 0.35 },
-      { x: 0.35, y: 0.1 },
-    ]
-  },
-  {
-    name: 'Fish',
-    emoji: '🐟',
-    difficulty: 'medium',
-    points: [
-      { x: 0.15, y: 0.5 },  // tail left
-      { x: 0.25, y: 0.35 },
-      { x: 0.4, y: 0.3 },
-      { x: 0.6, y: 0.3 },
-      { x: 0.8, y: 0.4 },
-      { x: 0.85, y: 0.5 },  // nose
-      { x: 0.8, y: 0.6 },
-      { x: 0.6, y: 0.7 },
-      { x: 0.4, y: 0.7 },
-      { x: 0.25, y: 0.65 },
-      { x: 0.15, y: 0.5 },
-    ]
-  },
-  {
-    name: 'Heart',
-    emoji: '❤️',
-    difficulty: 'medium',
-    points: [
-      { x: 0.5, y: 0.85 },  // bottom point
-      { x: 0.25, y: 0.6 },
-      { x: 0.15, y: 0.4 },
-      { x: 0.2, y: 0.25 },
-      { x: 0.35, y: 0.2 },
-      { x: 0.5, y: 0.35 },  // center dip
-      { x: 0.65, y: 0.2 },
-      { x: 0.8, y: 0.25 },
-      { x: 0.85, y: 0.4 },
-      { x: 0.75, y: 0.6 },
-      { x: 0.5, y: 0.85 },
-    ]
-  },
-  // Hard shapes - detailed animals
-  {
-    name: 'Lion',
-    emoji: '🦁',
-    difficulty: 'hard',
-    points: [
-      { x: 0.5, y: 0.1 },   // top of mane
-      { x: 0.7, y: 0.15 },
-      { x: 0.85, y: 0.3 },
-      { x: 0.9, y: 0.5 },   // right mane
-      { x: 0.85, y: 0.7 },
-      { x: 0.7, y: 0.85 },
-      { x: 0.5, y: 0.9 },   // bottom
-      { x: 0.3, y: 0.85 },
-      { x: 0.15, y: 0.7 },
-      { x: 0.1, y: 0.5 },   // left mane
-      { x: 0.15, y: 0.3 },
-      { x: 0.3, y: 0.15 },
-      { x: 0.5, y: 0.1 },
-    ]
-  },
-  {
-    name: 'Star',
-    emoji: '⭐',
-    difficulty: 'hard',
-    points: [
-      { x: 0.5, y: 0.1 },   // top point
-      { x: 0.42, y: 0.38 },
-      { x: 0.12, y: 0.38 }, // left point
-      { x: 0.35, y: 0.55 },
-      { x: 0.25, y: 0.85 }, // bottom left
-      { x: 0.5, y: 0.68 },
-      { x: 0.75, y: 0.85 }, // bottom right
-      { x: 0.65, y: 0.55 },
-      { x: 0.88, y: 0.38 }, // right point
-      { x: 0.58, y: 0.38 },
-      { x: 0.5, y: 0.1 },
-    ]
-  },
-  {
-    name: 'Butterfly',
-    emoji: '🦋',
-    difficulty: 'hard',
-    points: [
-      { x: 0.5, y: 0.25 },  // top
-      { x: 0.3, y: 0.15 },  // left wing top
-      { x: 0.1, y: 0.3 },
-      { x: 0.15, y: 0.5 },
-      { x: 0.3, y: 0.55 },  // left wing bottom
-      { x: 0.5, y: 0.5 },   // body center
-      { x: 0.7, y: 0.55 },  // right wing bottom
-      { x: 0.85, y: 0.5 },
-      { x: 0.9, y: 0.3 },
-      { x: 0.7, y: 0.15 },  // right wing top
-      { x: 0.5, y: 0.25 },
-      { x: 0.5, y: 0.85 },  // body/tail
-    ]
-  },
-  {
-    name: 'Elephant',
-    emoji: '🐘',
-    difficulty: 'hard',
-    points: [
-      { x: 0.25, y: 0.35 }, // left ear
-      { x: 0.15, y: 0.5 },
-      { x: 0.25, y: 0.55 },
-      { x: 0.3, y: 0.45 },
-      { x: 0.5, y: 0.4 },   // top of head
-      { x: 0.7, y: 0.45 },
-      { x: 0.75, y: 0.55 }, // right ear
-      { x: 0.85, y: 0.5 },
-      { x: 0.75, y: 0.35 },
-      { x: 0.6, y: 0.5 },
-      { x: 0.55, y: 0.7 },  // trunk
-      { x: 0.5, y: 0.85 },
-      { x: 0.45, y: 0.7 },
-      { x: 0.4, y: 0.5 },
-      { x: 0.25, y: 0.35 },
-    ]
-  },
-  // Grown-up shapes (complex, many points)
-  {
-    name: 'Unicorn',
-    emoji: '🦄',
-    difficulty: 'grownup',
-    points: [
-      { x: 0.5, y: 0.08 },  // horn tip
-      { x: 0.48, y: 0.2 },
-      { x: 0.35, y: 0.15 }, // ear
-      { x: 0.3, y: 0.25 },
-      { x: 0.2, y: 0.35 },
-      { x: 0.15, y: 0.5 },
-      { x: 0.2, y: 0.65 },
-      { x: 0.35, y: 0.75 },  // mane
-      { x: 0.5, y: 0.82 },
-      { x: 0.65, y: 0.75 },
-      { x: 0.8, y: 0.65 },
-      { x: 0.85, y: 0.5 },   // snout
-      { x: 0.8, y: 0.35 },
-      { x: 0.7, y: 0.25 },
-      { x: 0.65, y: 0.15 },  // ear
-      { x: 0.52, y: 0.2 },
-      { x: 0.5, y: 0.08 },
-    ]
-  },
-  {
-    name: 'Dragon',
-    emoji: '🐉',
-    difficulty: 'grownup',
-    points: [
-      { x: 0.1, y: 0.45 },  // tail
-      { x: 0.2, y: 0.4 },
-      { x: 0.25, y: 0.3 },
-      { x: 0.35, y: 0.25 }, // back spikes
-      { x: 0.4, y: 0.35 },
-      { x: 0.5, y: 0.28 },
-      { x: 0.55, y: 0.38 },
-      { x: 0.65, y: 0.32 },
-      { x: 0.72, y: 0.25 }, // head horns
-      { x: 0.78, y: 0.35 },
-      { x: 0.85, y: 0.45 }, // snout
-      { x: 0.8, y: 0.55 },
-      { x: 0.7, y: 0.6 },
-      { x: 0.55, y: 0.65 },
-      { x: 0.4, y: 0.7 },
-      { x: 0.25, y: 0.65 },
-      { x: 0.15, y: 0.55 },
-      { x: 0.1, y: 0.45 },
-    ]
-  },
-  {
-    name: 'Owl',
-    emoji: '🦉',
-    difficulty: 'grownup',
-    points: [
-      { x: 0.3, y: 0.15 },  // left ear tuft
-      { x: 0.35, y: 0.25 },
-      { x: 0.5, y: 0.2 },   // top of head
-      { x: 0.65, y: 0.25 },
-      { x: 0.7, y: 0.15 },  // right ear tuft
-      { x: 0.75, y: 0.3 },
-      { x: 0.8, y: 0.45 },
-      { x: 0.75, y: 0.65 },
-      { x: 0.65, y: 0.8 },  // right wing
-      { x: 0.5, y: 0.85 },
-      { x: 0.35, y: 0.8 },  // left wing
-      { x: 0.25, y: 0.65 },
-      { x: 0.2, y: 0.45 },
-      { x: 0.25, y: 0.3 },
-      { x: 0.3, y: 0.15 },
-    ]
-  },
-  {
-    name: 'Dolphin',
-    emoji: '🐬',
-    difficulty: 'grownup',
-    points: [
-      { x: 0.9, y: 0.5 },   // nose
-      { x: 0.8, y: 0.4 },
-      { x: 0.65, y: 0.32 },
-      { x: 0.5, y: 0.25 },  // dorsal fin
-      { x: 0.45, y: 0.35 },
-      { x: 0.3, y: 0.4 },
-      { x: 0.15, y: 0.45 },
-      { x: 0.08, y: 0.5 },  // tail top
-      { x: 0.12, y: 0.55 },
-      { x: 0.08, y: 0.6 },  // tail bottom
-      { x: 0.2, y: 0.55 },
-      { x: 0.35, y: 0.58 },
-      { x: 0.5, y: 0.6 },
-      { x: 0.65, y: 0.58 },
-      { x: 0.8, y: 0.55 },
-      { x: 0.9, y: 0.5 },
-    ]
-  },
+  // ===== EASY SHAPES =====
+  // Simple animals
+  { name: 'Mouse', emoji: '🐭', difficulty: 'easy', points: [
+    { x: 0.3, y: 0.35 }, { x: 0.4, y: 0.45 }, { x: 0.5, y: 0.35 }, { x: 0.6, y: 0.45 },
+    { x: 0.7, y: 0.35 }, { x: 0.65, y: 0.55 }, { x: 0.5, y: 0.65 }, { x: 0.35, y: 0.55 }, { x: 0.3, y: 0.35 },
+  ]},
+  { name: 'Pig', emoji: '🐷', difficulty: 'easy', points: [
+    { x: 0.25, y: 0.4 }, { x: 0.35, y: 0.25 }, { x: 0.5, y: 0.3 }, { x: 0.65, y: 0.25 },
+    { x: 0.75, y: 0.4 }, { x: 0.75, y: 0.6 }, { x: 0.5, y: 0.75 }, { x: 0.25, y: 0.6 }, { x: 0.25, y: 0.4 },
+  ]},
+  { name: 'Chick', emoji: '🐥', difficulty: 'easy', points: [
+    { x: 0.5, y: 0.2 }, { x: 0.7, y: 0.35 }, { x: 0.75, y: 0.55 }, { x: 0.6, y: 0.75 },
+    { x: 0.4, y: 0.75 }, { x: 0.25, y: 0.55 }, { x: 0.3, y: 0.35 }, { x: 0.5, y: 0.2 },
+  ]},
+  { name: 'Apple', emoji: '🍎', difficulty: 'easy', points: [
+    { x: 0.5, y: 0.2 }, { x: 0.5, y: 0.3 }, { x: 0.7, y: 0.35 }, { x: 0.8, y: 0.55 },
+    { x: 0.65, y: 0.8 }, { x: 0.35, y: 0.8 }, { x: 0.2, y: 0.55 }, { x: 0.3, y: 0.35 }, { x: 0.5, y: 0.3 },
+  ]},
+  { name: 'Frog', emoji: '🐸', difficulty: 'easy', points: [
+    { x: 0.2, y: 0.4 }, { x: 0.3, y: 0.25 }, { x: 0.4, y: 0.35 }, { x: 0.5, y: 0.3 },
+    { x: 0.6, y: 0.35 }, { x: 0.7, y: 0.25 }, { x: 0.8, y: 0.4 }, { x: 0.75, y: 0.65 },
+    { x: 0.5, y: 0.75 }, { x: 0.25, y: 0.65 }, { x: 0.2, y: 0.4 },
+  ]},
+  { name: 'Snail', emoji: '🐌', difficulty: 'easy', points: [
+    { x: 0.15, y: 0.6 }, { x: 0.3, y: 0.55 }, { x: 0.4, y: 0.4 }, { x: 0.55, y: 0.3 },
+    { x: 0.7, y: 0.35 }, { x: 0.8, y: 0.5 }, { x: 0.7, y: 0.65 }, { x: 0.5, y: 0.7 },
+    { x: 0.3, y: 0.65 }, { x: 0.15, y: 0.6 },
+  ]},
+  { name: 'Bee', emoji: '🐝', difficulty: 'easy', points: [
+    { x: 0.25, y: 0.5 }, { x: 0.35, y: 0.35 }, { x: 0.55, y: 0.3 }, { x: 0.75, y: 0.4 },
+    { x: 0.8, y: 0.55 }, { x: 0.7, y: 0.7 }, { x: 0.5, y: 0.75 }, { x: 0.3, y: 0.65 }, { x: 0.25, y: 0.5 },
+  ]},
+  { name: 'Duck', emoji: '🦆', difficulty: 'easy', points: [
+    { x: 0.2, y: 0.55 }, { x: 0.3, y: 0.4 }, { x: 0.5, y: 0.35 }, { x: 0.7, y: 0.4 },
+    { x: 0.85, y: 0.45 }, { x: 0.75, y: 0.55 }, { x: 0.55, y: 0.6 }, { x: 0.35, y: 0.65 }, { x: 0.2, y: 0.55 },
+  ]},
+  // Easy letters
+  { name: 'Letter O', emoji: '🅾️', difficulty: 'easy', points: [
+    { x: 0.5, y: 0.2 }, { x: 0.75, y: 0.35 }, { x: 0.8, y: 0.55 }, { x: 0.7, y: 0.75 },
+    { x: 0.5, y: 0.8 }, { x: 0.3, y: 0.75 }, { x: 0.2, y: 0.55 }, { x: 0.25, y: 0.35 }, { x: 0.5, y: 0.2 },
+  ]},
+  { name: 'Letter C', emoji: '🇨', difficulty: 'easy', points: [
+    { x: 0.75, y: 0.3 }, { x: 0.55, y: 0.2 }, { x: 0.35, y: 0.25 }, { x: 0.2, y: 0.4 },
+    { x: 0.2, y: 0.6 }, { x: 0.35, y: 0.75 }, { x: 0.55, y: 0.8 }, { x: 0.75, y: 0.7 },
+  ]},
+  { name: 'Letter L', emoji: '🇱', difficulty: 'easy', points: [
+    { x: 0.3, y: 0.2 }, { x: 0.3, y: 0.5 }, { x: 0.3, y: 0.8 }, { x: 0.55, y: 0.8 }, { x: 0.75, y: 0.8 },
+  ]},
+  { name: 'Letter V', emoji: '🇻', difficulty: 'easy', points: [
+    { x: 0.2, y: 0.2 }, { x: 0.35, y: 0.5 }, { x: 0.5, y: 0.8 }, { x: 0.65, y: 0.5 }, { x: 0.8, y: 0.2 },
+  ]},
+
+  // ===== MEDIUM SHAPES =====
+  // Medium animals
+  { name: 'Cat Face', emoji: '🐱', difficulty: 'medium', points: [
+    { x: 0.2, y: 0.5 }, { x: 0.2, y: 0.3 }, { x: 0.3, y: 0.15 }, { x: 0.4, y: 0.3 }, { x: 0.5, y: 0.25 },
+    { x: 0.6, y: 0.3 }, { x: 0.7, y: 0.15 }, { x: 0.8, y: 0.3 }, { x: 0.8, y: 0.5 },
+    { x: 0.7, y: 0.7 }, { x: 0.5, y: 0.8 }, { x: 0.3, y: 0.7 }, { x: 0.2, y: 0.5 },
+  ]},
+  { name: 'Dog Face', emoji: '🐶', difficulty: 'medium', points: [
+    { x: 0.15, y: 0.4 }, { x: 0.2, y: 0.6 }, { x: 0.25, y: 0.35 }, { x: 0.4, y: 0.3 }, { x: 0.5, y: 0.25 },
+    { x: 0.6, y: 0.3 }, { x: 0.75, y: 0.35 }, { x: 0.8, y: 0.6 }, { x: 0.85, y: 0.4 },
+    { x: 0.75, y: 0.55 }, { x: 0.7, y: 0.75 }, { x: 0.5, y: 0.85 }, { x: 0.3, y: 0.75 }, { x: 0.25, y: 0.55 }, { x: 0.15, y: 0.4 },
+  ]},
+  { name: 'Bunny', emoji: '🐰', difficulty: 'medium', points: [
+    { x: 0.35, y: 0.1 }, { x: 0.38, y: 0.35 }, { x: 0.5, y: 0.35 }, { x: 0.62, y: 0.35 }, { x: 0.65, y: 0.1 },
+    { x: 0.68, y: 0.35 }, { x: 0.75, y: 0.5 }, { x: 0.7, y: 0.7 }, { x: 0.5, y: 0.8 },
+    { x: 0.3, y: 0.7 }, { x: 0.25, y: 0.5 }, { x: 0.32, y: 0.35 }, { x: 0.35, y: 0.1 },
+  ]},
+  { name: 'Fish', emoji: '🐟', difficulty: 'medium', points: [
+    { x: 0.15, y: 0.5 }, { x: 0.25, y: 0.35 }, { x: 0.4, y: 0.3 }, { x: 0.6, y: 0.3 }, { x: 0.8, y: 0.4 },
+    { x: 0.85, y: 0.5 }, { x: 0.8, y: 0.6 }, { x: 0.6, y: 0.7 }, { x: 0.4, y: 0.7 }, { x: 0.25, y: 0.65 }, { x: 0.15, y: 0.5 },
+  ]},
+  { name: 'Heart', emoji: '❤️', difficulty: 'medium', points: [
+    { x: 0.5, y: 0.85 }, { x: 0.25, y: 0.6 }, { x: 0.15, y: 0.4 }, { x: 0.2, y: 0.25 }, { x: 0.35, y: 0.2 },
+    { x: 0.5, y: 0.35 }, { x: 0.65, y: 0.2 }, { x: 0.8, y: 0.25 }, { x: 0.85, y: 0.4 }, { x: 0.75, y: 0.6 }, { x: 0.5, y: 0.85 },
+  ]},
+  { name: 'Penguin', emoji: '🐧', difficulty: 'medium', points: [
+    { x: 0.5, y: 0.15 }, { x: 0.65, y: 0.25 }, { x: 0.75, y: 0.45 }, { x: 0.7, y: 0.7 },
+    { x: 0.55, y: 0.85 }, { x: 0.45, y: 0.85 }, { x: 0.3, y: 0.7 }, { x: 0.25, y: 0.45 },
+    { x: 0.35, y: 0.25 }, { x: 0.5, y: 0.15 },
+  ]},
+  { name: 'Turtle', emoji: '🐢', difficulty: 'medium', points: [
+    { x: 0.2, y: 0.55 }, { x: 0.15, y: 0.45 }, { x: 0.25, y: 0.35 }, { x: 0.4, y: 0.3 },
+    { x: 0.6, y: 0.3 }, { x: 0.75, y: 0.35 }, { x: 0.85, y: 0.45 }, { x: 0.85, y: 0.55 },
+    { x: 0.75, y: 0.65 }, { x: 0.55, y: 0.7 }, { x: 0.35, y: 0.7 }, { x: 0.2, y: 0.55 },
+  ]},
+  { name: 'Ladybug', emoji: '🐞', difficulty: 'medium', points: [
+    { x: 0.5, y: 0.2 }, { x: 0.7, y: 0.3 }, { x: 0.8, y: 0.5 }, { x: 0.75, y: 0.7 },
+    { x: 0.55, y: 0.8 }, { x: 0.45, y: 0.8 }, { x: 0.25, y: 0.7 }, { x: 0.2, y: 0.5 },
+    { x: 0.3, y: 0.3 }, { x: 0.5, y: 0.2 },
+  ]},
+  { name: 'Crab', emoji: '🦀', difficulty: 'medium', points: [
+    { x: 0.15, y: 0.35 }, { x: 0.25, y: 0.45 }, { x: 0.35, y: 0.35 }, { x: 0.5, y: 0.3 },
+    { x: 0.65, y: 0.35 }, { x: 0.75, y: 0.45 }, { x: 0.85, y: 0.35 }, { x: 0.8, y: 0.55 },
+    { x: 0.65, y: 0.7 }, { x: 0.35, y: 0.7 }, { x: 0.2, y: 0.55 }, { x: 0.15, y: 0.35 },
+  ]},
+  { name: 'Whale', emoji: '🐋', difficulty: 'medium', points: [
+    { x: 0.1, y: 0.5 }, { x: 0.15, y: 0.35 }, { x: 0.3, y: 0.3 }, { x: 0.5, y: 0.32 },
+    { x: 0.7, y: 0.38 }, { x: 0.85, y: 0.5 }, { x: 0.7, y: 0.62 }, { x: 0.5, y: 0.68 },
+    { x: 0.3, y: 0.65 }, { x: 0.1, y: 0.5 },
+  ]},
+  // Medium letters
+  { name: 'Letter A', emoji: '🅰️', difficulty: 'medium', points: [
+    { x: 0.2, y: 0.8 }, { x: 0.35, y: 0.5 }, { x: 0.5, y: 0.2 }, { x: 0.65, y: 0.5 }, { x: 0.8, y: 0.8 },
+    { x: 0.65, y: 0.55 }, { x: 0.35, y: 0.55 },
+  ]},
+  { name: 'Letter B', emoji: '🅱️', difficulty: 'medium', points: [
+    { x: 0.25, y: 0.2 }, { x: 0.25, y: 0.5 }, { x: 0.25, y: 0.8 }, { x: 0.55, y: 0.8 },
+    { x: 0.7, y: 0.7 }, { x: 0.7, y: 0.58 }, { x: 0.55, y: 0.5 }, { x: 0.25, y: 0.5 },
+    { x: 0.55, y: 0.5 }, { x: 0.7, y: 0.42 }, { x: 0.7, y: 0.3 }, { x: 0.55, y: 0.2 }, { x: 0.25, y: 0.2 },
+  ]},
+  { name: 'Letter D', emoji: '🇩', difficulty: 'medium', points: [
+    { x: 0.25, y: 0.2 }, { x: 0.25, y: 0.8 }, { x: 0.5, y: 0.8 }, { x: 0.7, y: 0.65 },
+    { x: 0.75, y: 0.5 }, { x: 0.7, y: 0.35 }, { x: 0.5, y: 0.2 }, { x: 0.25, y: 0.2 },
+  ]},
+  { name: 'Letter E', emoji: '🇪', difficulty: 'medium', points: [
+    { x: 0.7, y: 0.2 }, { x: 0.3, y: 0.2 }, { x: 0.3, y: 0.5 }, { x: 0.6, y: 0.5 },
+    { x: 0.3, y: 0.5 }, { x: 0.3, y: 0.8 }, { x: 0.7, y: 0.8 },
+  ]},
+  { name: 'Letter S', emoji: '🇸', difficulty: 'medium', points: [
+    { x: 0.7, y: 0.25 }, { x: 0.5, y: 0.2 }, { x: 0.3, y: 0.28 }, { x: 0.28, y: 0.4 },
+    { x: 0.4, y: 0.5 }, { x: 0.6, y: 0.5 }, { x: 0.72, y: 0.6 }, { x: 0.7, y: 0.72 },
+    { x: 0.5, y: 0.8 }, { x: 0.3, y: 0.75 },
+  ]},
+  { name: 'Letter M', emoji: '🇲', difficulty: 'medium', points: [
+    { x: 0.15, y: 0.8 }, { x: 0.15, y: 0.2 }, { x: 0.5, y: 0.55 }, { x: 0.85, y: 0.2 }, { x: 0.85, y: 0.8 },
+  ]},
+
+  // ===== HARD SHAPES =====
+  { name: 'Lion', emoji: '🦁', difficulty: 'hard', points: [
+    { x: 0.5, y: 0.1 }, { x: 0.7, y: 0.15 }, { x: 0.85, y: 0.3 }, { x: 0.9, y: 0.5 },
+    { x: 0.85, y: 0.7 }, { x: 0.7, y: 0.85 }, { x: 0.5, y: 0.9 }, { x: 0.3, y: 0.85 },
+    { x: 0.15, y: 0.7 }, { x: 0.1, y: 0.5 }, { x: 0.15, y: 0.3 }, { x: 0.3, y: 0.15 }, { x: 0.5, y: 0.1 },
+  ]},
+  { name: 'Star', emoji: '⭐', difficulty: 'hard', points: [
+    { x: 0.5, y: 0.1 }, { x: 0.42, y: 0.38 }, { x: 0.12, y: 0.38 }, { x: 0.35, y: 0.55 },
+    { x: 0.25, y: 0.85 }, { x: 0.5, y: 0.68 }, { x: 0.75, y: 0.85 }, { x: 0.65, y: 0.55 },
+    { x: 0.88, y: 0.38 }, { x: 0.58, y: 0.38 }, { x: 0.5, y: 0.1 },
+  ]},
+  { name: 'Butterfly', emoji: '🦋', difficulty: 'hard', points: [
+    { x: 0.5, y: 0.25 }, { x: 0.3, y: 0.15 }, { x: 0.1, y: 0.3 }, { x: 0.15, y: 0.5 },
+    { x: 0.3, y: 0.55 }, { x: 0.5, y: 0.5 }, { x: 0.7, y: 0.55 }, { x: 0.85, y: 0.5 },
+    { x: 0.9, y: 0.3 }, { x: 0.7, y: 0.15 }, { x: 0.5, y: 0.25 }, { x: 0.5, y: 0.85 },
+  ]},
+  { name: 'Elephant', emoji: '🐘', difficulty: 'hard', points: [
+    { x: 0.25, y: 0.35 }, { x: 0.15, y: 0.5 }, { x: 0.25, y: 0.55 }, { x: 0.3, y: 0.45 },
+    { x: 0.5, y: 0.4 }, { x: 0.7, y: 0.45 }, { x: 0.75, y: 0.55 }, { x: 0.85, y: 0.5 },
+    { x: 0.75, y: 0.35 }, { x: 0.6, y: 0.5 }, { x: 0.55, y: 0.7 }, { x: 0.5, y: 0.85 },
+    { x: 0.45, y: 0.7 }, { x: 0.4, y: 0.5 }, { x: 0.25, y: 0.35 },
+  ]},
+  { name: 'Giraffe', emoji: '🦒', difficulty: 'hard', points: [
+    { x: 0.45, y: 0.1 }, { x: 0.55, y: 0.1 }, { x: 0.6, y: 0.2 }, { x: 0.58, y: 0.35 },
+    { x: 0.55, y: 0.5 }, { x: 0.65, y: 0.6 }, { x: 0.7, y: 0.75 }, { x: 0.6, y: 0.85 },
+    { x: 0.4, y: 0.85 }, { x: 0.3, y: 0.75 }, { x: 0.35, y: 0.6 }, { x: 0.45, y: 0.5 },
+    { x: 0.42, y: 0.35 }, { x: 0.4, y: 0.2 }, { x: 0.45, y: 0.1 },
+  ]},
+  { name: 'Octopus', emoji: '🐙', difficulty: 'hard', points: [
+    { x: 0.5, y: 0.15 }, { x: 0.7, y: 0.25 }, { x: 0.8, y: 0.45 }, { x: 0.85, y: 0.7 },
+    { x: 0.75, y: 0.85 }, { x: 0.6, y: 0.75 }, { x: 0.5, y: 0.85 }, { x: 0.4, y: 0.75 },
+    { x: 0.25, y: 0.85 }, { x: 0.15, y: 0.7 }, { x: 0.2, y: 0.45 }, { x: 0.3, y: 0.25 }, { x: 0.5, y: 0.15 },
+  ]},
+  { name: 'Monkey', emoji: '🐵', difficulty: 'hard', points: [
+    { x: 0.15, y: 0.45 }, { x: 0.2, y: 0.55 }, { x: 0.25, y: 0.4 }, { x: 0.35, y: 0.25 },
+    { x: 0.5, y: 0.2 }, { x: 0.65, y: 0.25 }, { x: 0.75, y: 0.4 }, { x: 0.8, y: 0.55 },
+    { x: 0.85, y: 0.45 }, { x: 0.78, y: 0.55 }, { x: 0.7, y: 0.7 }, { x: 0.5, y: 0.8 },
+    { x: 0.3, y: 0.7 }, { x: 0.22, y: 0.55 }, { x: 0.15, y: 0.45 },
+  ]},
+  { name: 'Panda', emoji: '🐼', difficulty: 'hard', points: [
+    { x: 0.2, y: 0.3 }, { x: 0.25, y: 0.2 }, { x: 0.35, y: 0.25 }, { x: 0.4, y: 0.35 },
+    { x: 0.5, y: 0.3 }, { x: 0.6, y: 0.35 }, { x: 0.65, y: 0.25 }, { x: 0.75, y: 0.2 },
+    { x: 0.8, y: 0.3 }, { x: 0.8, y: 0.55 }, { x: 0.7, y: 0.75 }, { x: 0.5, y: 0.8 },
+    { x: 0.3, y: 0.75 }, { x: 0.2, y: 0.55 }, { x: 0.2, y: 0.3 },
+  ]},
+  { name: 'Koala', emoji: '🐨', difficulty: 'hard', points: [
+    { x: 0.15, y: 0.35 }, { x: 0.2, y: 0.5 }, { x: 0.25, y: 0.35 }, { x: 0.4, y: 0.25 },
+    { x: 0.5, y: 0.3 }, { x: 0.6, y: 0.25 }, { x: 0.75, y: 0.35 }, { x: 0.8, y: 0.5 },
+    { x: 0.85, y: 0.35 }, { x: 0.78, y: 0.55 }, { x: 0.65, y: 0.75 }, { x: 0.5, y: 0.8 },
+    { x: 0.35, y: 0.75 }, { x: 0.22, y: 0.55 }, { x: 0.15, y: 0.35 },
+  ]},
+  { name: 'Fox', emoji: '🦊', difficulty: 'hard', points: [
+    { x: 0.2, y: 0.2 }, { x: 0.25, y: 0.4 }, { x: 0.35, y: 0.5 }, { x: 0.5, y: 0.45 },
+    { x: 0.65, y: 0.5 }, { x: 0.75, y: 0.4 }, { x: 0.8, y: 0.2 }, { x: 0.75, y: 0.55 },
+    { x: 0.65, y: 0.7 }, { x: 0.5, y: 0.85 }, { x: 0.35, y: 0.7 }, { x: 0.25, y: 0.55 }, { x: 0.2, y: 0.2 },
+  ]},
+  // Hard letters
+  { name: 'Letter R', emoji: '🇷', difficulty: 'hard', points: [
+    { x: 0.25, y: 0.8 }, { x: 0.25, y: 0.5 }, { x: 0.25, y: 0.2 }, { x: 0.55, y: 0.2 },
+    { x: 0.7, y: 0.3 }, { x: 0.7, y: 0.42 }, { x: 0.55, y: 0.5 }, { x: 0.25, y: 0.5 },
+    { x: 0.45, y: 0.6 }, { x: 0.7, y: 0.8 },
+  ]},
+  { name: 'Letter K', emoji: '🇰', difficulty: 'hard', points: [
+    { x: 0.25, y: 0.2 }, { x: 0.25, y: 0.5 }, { x: 0.25, y: 0.8 }, { x: 0.25, y: 0.5 },
+    { x: 0.45, y: 0.5 }, { x: 0.7, y: 0.2 }, { x: 0.45, y: 0.5 }, { x: 0.7, y: 0.8 },
+  ]},
+  { name: 'Letter W', emoji: '🇼', difficulty: 'hard', points: [
+    { x: 0.1, y: 0.2 }, { x: 0.25, y: 0.8 }, { x: 0.4, y: 0.45 }, { x: 0.5, y: 0.6 },
+    { x: 0.6, y: 0.45 }, { x: 0.75, y: 0.8 }, { x: 0.9, y: 0.2 },
+  ]},
+  { name: 'Letter G', emoji: '🇬', difficulty: 'hard', points: [
+    { x: 0.75, y: 0.28 }, { x: 0.55, y: 0.2 }, { x: 0.35, y: 0.25 }, { x: 0.2, y: 0.4 },
+    { x: 0.2, y: 0.6 }, { x: 0.35, y: 0.75 }, { x: 0.55, y: 0.8 }, { x: 0.75, y: 0.72 },
+    { x: 0.75, y: 0.55 }, { x: 0.55, y: 0.55 },
+  ]},
+
+  // ===== GROWNUP SHAPES =====
+  { name: 'Unicorn', emoji: '🦄', difficulty: 'grownup', points: [
+    { x: 0.5, y: 0.08 }, { x: 0.48, y: 0.2 }, { x: 0.35, y: 0.15 }, { x: 0.3, y: 0.25 },
+    { x: 0.2, y: 0.35 }, { x: 0.15, y: 0.5 }, { x: 0.2, y: 0.65 }, { x: 0.35, y: 0.75 },
+    { x: 0.5, y: 0.82 }, { x: 0.65, y: 0.75 }, { x: 0.8, y: 0.65 }, { x: 0.85, y: 0.5 },
+    { x: 0.8, y: 0.35 }, { x: 0.7, y: 0.25 }, { x: 0.65, y: 0.15 }, { x: 0.52, y: 0.2 }, { x: 0.5, y: 0.08 },
+  ]},
+  { name: 'Dragon', emoji: '🐉', difficulty: 'grownup', points: [
+    { x: 0.1, y: 0.45 }, { x: 0.2, y: 0.4 }, { x: 0.25, y: 0.3 }, { x: 0.35, y: 0.25 },
+    { x: 0.4, y: 0.35 }, { x: 0.5, y: 0.28 }, { x: 0.55, y: 0.38 }, { x: 0.65, y: 0.32 },
+    { x: 0.72, y: 0.25 }, { x: 0.78, y: 0.35 }, { x: 0.85, y: 0.45 }, { x: 0.8, y: 0.55 },
+    { x: 0.7, y: 0.6 }, { x: 0.55, y: 0.65 }, { x: 0.4, y: 0.7 }, { x: 0.25, y: 0.65 },
+    { x: 0.15, y: 0.55 }, { x: 0.1, y: 0.45 },
+  ]},
+  { name: 'Owl', emoji: '🦉', difficulty: 'grownup', points: [
+    { x: 0.3, y: 0.15 }, { x: 0.35, y: 0.25 }, { x: 0.5, y: 0.2 }, { x: 0.65, y: 0.25 },
+    { x: 0.7, y: 0.15 }, { x: 0.75, y: 0.3 }, { x: 0.8, y: 0.45 }, { x: 0.75, y: 0.65 },
+    { x: 0.65, y: 0.8 }, { x: 0.5, y: 0.85 }, { x: 0.35, y: 0.8 }, { x: 0.25, y: 0.65 },
+    { x: 0.2, y: 0.45 }, { x: 0.25, y: 0.3 }, { x: 0.3, y: 0.15 },
+  ]},
+  { name: 'Dolphin', emoji: '🐬', difficulty: 'grownup', points: [
+    { x: 0.9, y: 0.5 }, { x: 0.8, y: 0.4 }, { x: 0.65, y: 0.32 }, { x: 0.5, y: 0.25 },
+    { x: 0.45, y: 0.35 }, { x: 0.3, y: 0.4 }, { x: 0.15, y: 0.45 }, { x: 0.08, y: 0.5 },
+    { x: 0.12, y: 0.55 }, { x: 0.08, y: 0.6 }, { x: 0.2, y: 0.55 }, { x: 0.35, y: 0.58 },
+    { x: 0.5, y: 0.6 }, { x: 0.65, y: 0.58 }, { x: 0.8, y: 0.55 }, { x: 0.9, y: 0.5 },
+  ]},
+  { name: 'Phoenix', emoji: '🔥', difficulty: 'grownup', points: [
+    { x: 0.5, y: 0.1 }, { x: 0.6, y: 0.15 }, { x: 0.7, y: 0.25 }, { x: 0.8, y: 0.4 },
+    { x: 0.85, y: 0.55 }, { x: 0.8, y: 0.7 }, { x: 0.65, y: 0.8 }, { x: 0.5, y: 0.75 },
+    { x: 0.35, y: 0.8 }, { x: 0.2, y: 0.7 }, { x: 0.15, y: 0.55 }, { x: 0.2, y: 0.4 },
+    { x: 0.3, y: 0.25 }, { x: 0.4, y: 0.15 }, { x: 0.5, y: 0.1 },
+  ]},
+  { name: 'Peacock', emoji: '🦚', difficulty: 'grownup', points: [
+    { x: 0.5, y: 0.08 }, { x: 0.7, y: 0.12 }, { x: 0.85, y: 0.25 }, { x: 0.92, y: 0.45 },
+    { x: 0.88, y: 0.65 }, { x: 0.75, y: 0.8 }, { x: 0.5, y: 0.88 }, { x: 0.25, y: 0.8 },
+    { x: 0.12, y: 0.65 }, { x: 0.08, y: 0.45 }, { x: 0.15, y: 0.25 }, { x: 0.3, y: 0.12 }, { x: 0.5, y: 0.08 },
+  ]},
+  { name: 'Shark', emoji: '🦈', difficulty: 'grownup', points: [
+    { x: 0.9, y: 0.5 }, { x: 0.8, y: 0.42 }, { x: 0.65, y: 0.35 }, { x: 0.5, y: 0.2 },
+    { x: 0.45, y: 0.35 }, { x: 0.3, y: 0.4 }, { x: 0.12, y: 0.45 }, { x: 0.05, y: 0.55 },
+    { x: 0.15, y: 0.52 }, { x: 0.05, y: 0.6 }, { x: 0.2, y: 0.55 }, { x: 0.4, y: 0.58 },
+    { x: 0.6, y: 0.55 }, { x: 0.75, y: 0.52 }, { x: 0.9, y: 0.5 },
+  ]},
+  { name: 'Crocodile', emoji: '🐊', difficulty: 'grownup', points: [
+    { x: 0.95, y: 0.48 }, { x: 0.85, y: 0.42 }, { x: 0.7, y: 0.4 }, { x: 0.55, y: 0.38 },
+    { x: 0.4, y: 0.4 }, { x: 0.25, y: 0.42 }, { x: 0.1, y: 0.48 }, { x: 0.05, y: 0.52 },
+    { x: 0.1, y: 0.58 }, { x: 0.25, y: 0.6 }, { x: 0.4, y: 0.58 }, { x: 0.55, y: 0.56 },
+    { x: 0.7, y: 0.54 }, { x: 0.85, y: 0.52 }, { x: 0.95, y: 0.48 },
+  ]},
+  // Grownup letters
+  { name: 'Letter Q', emoji: '🇶', difficulty: 'grownup', points: [
+    { x: 0.5, y: 0.18 }, { x: 0.72, y: 0.28 }, { x: 0.8, y: 0.5 }, { x: 0.72, y: 0.72 },
+    { x: 0.5, y: 0.82 }, { x: 0.28, y: 0.72 }, { x: 0.2, y: 0.5 }, { x: 0.28, y: 0.28 },
+    { x: 0.5, y: 0.18 }, { x: 0.55, y: 0.65 }, { x: 0.75, y: 0.88 },
+  ]},
+  { name: 'Letter Z', emoji: '🇿', difficulty: 'grownup', points: [
+    { x: 0.2, y: 0.2 }, { x: 0.5, y: 0.2 }, { x: 0.8, y: 0.2 }, { x: 0.5, y: 0.5 },
+    { x: 0.2, y: 0.8 }, { x: 0.5, y: 0.8 }, { x: 0.8, y: 0.8 },
+  ]},
+  { name: 'Ampersand', emoji: '🔣', difficulty: 'grownup', points: [
+    { x: 0.7, y: 0.75 }, { x: 0.55, y: 0.8 }, { x: 0.35, y: 0.72 }, { x: 0.3, y: 0.58 },
+    { x: 0.4, y: 0.48 }, { x: 0.55, y: 0.42 }, { x: 0.6, y: 0.3 }, { x: 0.5, y: 0.2 },
+    { x: 0.35, y: 0.25 }, { x: 0.3, y: 0.38 }, { x: 0.45, y: 0.52 }, { x: 0.7, y: 0.78 },
+  ]},
 ];
 
 const RAINBOW_COLORS = ['#FF6B6B', '#FFA94D', '#FFE066', '#69DB7C', '#74C0FC', '#B197FC'];
+
+// Fisher-Yates shuffle
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export function createTraceGame(onBack: () => void): HTMLElement {
   const container = document.createElement('div');
@@ -379,19 +320,19 @@ export function createTraceGame(onBack: () => void): HTMLElement {
     const settings = getDifficultySettings();
     const snapDist = settings.traceSnapDistance;
 
-    // Filter animals based on difficulty
+    // Filter animals based on difficulty and shuffle for random order
     if (snapDist >= 40) {
       // Easy - only easy shapes
-      return ANIMALS.filter(a => a.difficulty === 'easy');
+      return shuffleArray(ANIMALS.filter(a => a.difficulty === 'easy'));
     } else if (snapDist >= 30) {
       // Medium - easy and medium
-      return ANIMALS.filter(a => a.difficulty === 'easy' || a.difficulty === 'medium');
+      return shuffleArray(ANIMALS.filter(a => a.difficulty === 'easy' || a.difficulty === 'medium'));
     } else if (snapDist >= 20) {
       // Hard - easy, medium and hard shapes
-      return ANIMALS.filter(a => a.difficulty !== 'grownup');
+      return shuffleArray(ANIMALS.filter(a => a.difficulty !== 'grownup'));
     } else {
       // Grown-up - only grownup shapes (very challenging!)
-      return ANIMALS.filter(a => a.difficulty === 'grownup');
+      return shuffleArray(ANIMALS.filter(a => a.difficulty === 'grownup'));
     }
   }
 
