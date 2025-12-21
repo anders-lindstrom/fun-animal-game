@@ -116,7 +116,7 @@ export function createMenu(onSelectGame: (game: GameType) => void): HTMLElement 
 
     const collectedLabel = document.createElement('div');
     collectedLabel.className = 'collected-label';
-    collectedLabel.textContent = 'My Animals:';
+    collectedLabel.textContent = 'My Collection:';
     collectedSection.appendChild(collectedLabel);
 
     const collectedAnimals = document.createElement('div');
