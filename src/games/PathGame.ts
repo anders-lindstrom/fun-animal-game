@@ -288,7 +288,9 @@ export function createPathGame(onBack: () => void): HTMLElement {
 
     // Only advance if close to the path (based on difficulty)
     if (nearestDistance < settings.pathSnapDistance && nearestProgress > animalProgress) {
-      animalProgress = nearestProgress * settings.animalSpeed;
+      // Move animal toward the drawn position, scaled by speed
+      const progressDelta = nearestProgress - animalProgress;
+      animalProgress += progressDelta * Math.min(settings.animalSpeed, 1);
       if (animalProgress > 1) animalProgress = 1;
 
       // Check if reached the end
