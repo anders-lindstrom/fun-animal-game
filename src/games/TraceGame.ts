@@ -1,7 +1,7 @@
 // Trace the Animal Game
 // Kids trace dotted animal outlines with their finger
 
-import { playDraw, playSuccess, playClick, playPop } from '../utils/audio';
+import { playDraw, playSuccess, playClick, playPop, playEncouragement } from '../utils/audio';
 import { showCelebration } from '../components/Celebration';
 import { getDifficultySettings, collectAnimal, addStars, completeGame } from '../utils/state';
 
@@ -69,6 +69,17 @@ const ANIMALS: AnimalShape[] = [
   ]},
   { name: 'Letter V', emoji: '🇻', difficulty: 'easy', points: [
     { x: 0.2, y: 0.2 }, { x: 0.35, y: 0.5 }, { x: 0.5, y: 0.8 }, { x: 0.65, y: 0.5 }, { x: 0.8, y: 0.2 },
+  ]},
+  // Easy numbers
+  { name: 'Number 1', emoji: '1️⃣', difficulty: 'easy', points: [
+    { x: 0.4, y: 0.25 }, { x: 0.5, y: 0.2 }, { x: 0.5, y: 0.5 }, { x: 0.5, y: 0.8 },
+  ]},
+  { name: 'Number 0', emoji: '0️⃣', difficulty: 'easy', points: [
+    { x: 0.5, y: 0.2 }, { x: 0.7, y: 0.3 }, { x: 0.75, y: 0.5 }, { x: 0.7, y: 0.7 },
+    { x: 0.5, y: 0.8 }, { x: 0.3, y: 0.7 }, { x: 0.25, y: 0.5 }, { x: 0.3, y: 0.3 }, { x: 0.5, y: 0.2 },
+  ]},
+  { name: 'Number 7', emoji: '7️⃣', difficulty: 'easy', points: [
+    { x: 0.25, y: 0.2 }, { x: 0.5, y: 0.2 }, { x: 0.75, y: 0.2 }, { x: 0.5, y: 0.5 }, { x: 0.35, y: 0.8 },
   ]},
 
   // ===== MEDIUM SHAPES =====
@@ -147,6 +158,24 @@ const ANIMALS: AnimalShape[] = [
   { name: 'Letter M', emoji: '🇲', difficulty: 'medium', points: [
     { x: 0.15, y: 0.8 }, { x: 0.15, y: 0.2 }, { x: 0.5, y: 0.55 }, { x: 0.85, y: 0.2 }, { x: 0.85, y: 0.8 },
   ]},
+  // Medium numbers
+  { name: 'Number 2', emoji: '2️⃣', difficulty: 'medium', points: [
+    { x: 0.3, y: 0.3 }, { x: 0.4, y: 0.2 }, { x: 0.6, y: 0.2 }, { x: 0.7, y: 0.3 },
+    { x: 0.65, y: 0.45 }, { x: 0.5, y: 0.55 }, { x: 0.35, y: 0.7 }, { x: 0.3, y: 0.8 }, { x: 0.7, y: 0.8 },
+  ]},
+  { name: 'Number 3', emoji: '3️⃣', difficulty: 'medium', points: [
+    { x: 0.3, y: 0.25 }, { x: 0.5, y: 0.2 }, { x: 0.7, y: 0.3 }, { x: 0.65, y: 0.45 },
+    { x: 0.5, y: 0.5 }, { x: 0.65, y: 0.55 }, { x: 0.7, y: 0.7 }, { x: 0.5, y: 0.8 }, { x: 0.3, y: 0.75 },
+  ]},
+  { name: 'Number 5', emoji: '5️⃣', difficulty: 'medium', points: [
+    { x: 0.7, y: 0.2 }, { x: 0.35, y: 0.2 }, { x: 0.3, y: 0.45 }, { x: 0.55, y: 0.45 },
+    { x: 0.7, y: 0.55 }, { x: 0.7, y: 0.7 }, { x: 0.5, y: 0.8 }, { x: 0.3, y: 0.75 },
+  ]},
+  { name: 'Number 6', emoji: '6️⃣', difficulty: 'medium', points: [
+    { x: 0.65, y: 0.25 }, { x: 0.5, y: 0.2 }, { x: 0.35, y: 0.3 }, { x: 0.3, y: 0.5 },
+    { x: 0.35, y: 0.7 }, { x: 0.5, y: 0.8 }, { x: 0.65, y: 0.7 }, { x: 0.65, y: 0.55 },
+    { x: 0.5, y: 0.5 }, { x: 0.35, y: 0.55 },
+  ]},
 
   // ===== HARD SHAPES =====
   { name: 'Lion', emoji: '🦁', difficulty: 'hard', points: [
@@ -222,6 +251,21 @@ const ANIMALS: AnimalShape[] = [
     { x: 0.75, y: 0.28 }, { x: 0.55, y: 0.2 }, { x: 0.35, y: 0.25 }, { x: 0.2, y: 0.4 },
     { x: 0.2, y: 0.6 }, { x: 0.35, y: 0.75 }, { x: 0.55, y: 0.8 }, { x: 0.75, y: 0.72 },
     { x: 0.75, y: 0.55 }, { x: 0.55, y: 0.55 },
+  ]},
+  // Hard numbers
+  { name: 'Number 4', emoji: '4️⃣', difficulty: 'hard', points: [
+    { x: 0.6, y: 0.2 }, { x: 0.35, y: 0.55 }, { x: 0.7, y: 0.55 }, { x: 0.6, y: 0.55 },
+    { x: 0.6, y: 0.8 },
+  ]},
+  { name: 'Number 8', emoji: '8️⃣', difficulty: 'hard', points: [
+    { x: 0.5, y: 0.5 }, { x: 0.35, y: 0.4 }, { x: 0.35, y: 0.28 }, { x: 0.5, y: 0.2 },
+    { x: 0.65, y: 0.28 }, { x: 0.65, y: 0.4 }, { x: 0.5, y: 0.5 }, { x: 0.35, y: 0.6 },
+    { x: 0.35, y: 0.72 }, { x: 0.5, y: 0.8 }, { x: 0.65, y: 0.72 }, { x: 0.65, y: 0.6 }, { x: 0.5, y: 0.5 },
+  ]},
+  { name: 'Number 9', emoji: '9️⃣', difficulty: 'hard', points: [
+    { x: 0.65, y: 0.45 }, { x: 0.5, y: 0.5 }, { x: 0.35, y: 0.4 }, { x: 0.35, y: 0.28 },
+    { x: 0.5, y: 0.2 }, { x: 0.65, y: 0.28 }, { x: 0.7, y: 0.45 }, { x: 0.65, y: 0.65 },
+    { x: 0.5, y: 0.8 }, { x: 0.35, y: 0.75 },
   ]},
 
   // ===== GROWNUP SHAPES =====
@@ -575,6 +619,7 @@ export function createTraceGame(onBack: () => void): HTMLElement {
       if (completedPoints >= animal.points.length) {
         // Completed this animal!
         playSuccess();
+        playEncouragement();
         showCelebration();
         earnedStars++;
         addStars(1);

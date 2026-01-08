@@ -1,7 +1,7 @@
 // Follow the Path Game
 // Kids draw along a path to help an animal get home
 
-import { playDraw, playSuccess, playClick } from '../utils/audio';
+import { playDraw, playSuccess, playClick, playEncouragement } from '../utils/audio';
 import { showCelebration } from '../components/Celebration';
 import { getDifficultySettings, collectAnimal, addStars, completeGame } from '../utils/state';
 
@@ -297,6 +297,7 @@ export function createPathGame(onBack: () => void): HTMLElement {
       if (animalProgress >= 0.95) {
         completed = true;
         playSuccess();
+        playEncouragement();
         showCelebration();
         earnedStars++;
         addStars(1);

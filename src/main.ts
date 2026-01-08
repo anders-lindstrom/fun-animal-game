@@ -6,6 +6,8 @@ import { createMenu, GameType } from './components/GameMenu';
 import { createTraceGame } from './games/TraceGame';
 import { createMatchGame } from './games/MatchGame';
 import { createPathGame } from './games/PathGame';
+import { createFreeDrawGame } from './games/FreeDrawGame';
+import { createHabitat } from './components/Habitat';
 import { initAudio } from './utils/audio';
 import { loadState } from './utils/state';
 
@@ -40,6 +42,12 @@ function init(): void {
         break;
       case 'path':
         app.appendChild(createPathGame(showMenu));
+        break;
+      case 'freedraw':
+        app.appendChild(createFreeDrawGame(showMenu));
+        break;
+      case 'habitat':
+        app.appendChild(createHabitat(showMenu));
         break;
     }
   }

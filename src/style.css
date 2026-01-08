@@ -219,6 +219,7 @@ body {
 .btn-trace { background: linear-gradient(145deg, var(--yellow), var(--orange)); }
 .btn-match { background: linear-gradient(145deg, var(--green), var(--blue)); }
 .btn-path { background: linear-gradient(145deg, var(--pink), var(--purple)); }
+.btn-freedraw { background: linear-gradient(145deg, var(--pink), var(--yellow)); }
 
 /* Game container */
 .game-container {
@@ -646,5 +647,227 @@ canvas {
 
   .menu-buttons {
     gap: 15px;
+  }
+}
+
+/* ===== NEW FEATURES ===== */
+
+/* Collection section enhancements */
+.collected-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.habitat-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: var(--green);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.habitat-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+.collected-animals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.animal-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.15s;
+  border-radius: 8px;
+}
+
+.animal-btn:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.animal-btn:active,
+.animal-btn.bounce {
+  transform: scale(1.3);
+}
+
+.collected-hint {
+  font-size: 14px;
+  color: var(--blue);
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+/* Header buttons for games */
+.header-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.icon-btn.clear-btn {
+  background: var(--red);
+}
+
+.icon-btn.save-btn {
+  background: var(--blue);
+}
+
+/* Free Draw styles */
+.freedraw-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.draw-canvas {
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  background: white;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 30px;
+  margin: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.color-btn {
+  width: 45px;
+  height: 45px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+}
+
+.color-btn:active {
+  transform: translateY(2px);
+}
+
+.color-btn.selected {
+  border-color: #333;
+  transform: scale(1.15);
+}
+
+/* Habitat styles */
+.habitat-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 10px;
+}
+
+.habitat-canvas {
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.habitat-hint {
+  text-align: center;
+  font-size: 16px;
+  color: var(--purple);
+  padding: 10px;
+  opacity: 0.8;
+}
+
+.habitat-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.habitat-empty .back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.empty-content {
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+.empty-text {
+  font-size: 28px;
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+.empty-hint {
+  font-size: 18px;
+  color: var(--blue);
+  opacity: 0.8;
+}
+
+/* Responsive adjustments for new features */
+@media (max-width: 500px) {
+  .color-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .color-palette {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .animal-btn {
+    font-size: 28px;
+  }
+
+  .icon-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
   }
 }

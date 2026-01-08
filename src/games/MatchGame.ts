@@ -1,7 +1,7 @@
 // Connect the Pairs Game
 // Kids tap two matching animals to connect them
 
-import { playClick, playMatch, playSuccess, playTryAgain } from '../utils/audio';
+import { playClick, playMatch, playSuccess, playTryAgain, playEncouragement } from '../utils/audio';
 import { showCelebration, showStars } from '../components/Celebration';
 import { getDifficultySettings, collectAnimal, addStars, completeGame } from '../utils/state';
 
@@ -179,6 +179,7 @@ export function createMatchGame(onBack: () => void): HTMLElement {
         if (matchedCount >= cards.length) {
           setTimeout(() => {
             playSuccess();
+            playEncouragement();
             showCelebration();
             earnedStars++;
             addStars(1);

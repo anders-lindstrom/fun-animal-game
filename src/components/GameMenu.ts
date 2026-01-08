@@ -1,6 +1,6 @@
 // Home menu with game buttons, difficulty selector, and settings
 
-import { playClick } from '../utils/audio';
+import { playClick, playAnimalSound } from '../utils/audio';
 import {
   getDifficulty,
   setDifficulty,
@@ -11,7 +11,7 @@ import {
   Difficulty,
 } from '../utils/state';
 
-export type GameType = 'trace' | 'match' | 'path';
+export type GameType = 'trace' | 'match' | 'path' | 'freedraw' | 'habitat';
 
 export function createMenu(onSelectGame: (game: GameType) => void): HTMLElement {
   const menu = document.createElement('div');
@@ -106,6 +106,13 @@ export function createMenu(onSelectGame: (game: GameType) => void): HTMLElement 
   });
   buttons.appendChild(pathBtn);
 
+  // Free Draw button
+  const drawBtn = createButton('btn-freedraw', '🎨', 'Create!', () => {
+    playClick();
+    onSelectGame('freedraw');
+  });
+  buttons.appendChild(drawBtn);
+
   menu.appendChild(buttons);
 
   // Collected animals section
@@ -114,15 +121,52 @@ export function createMenu(onSelectGame: (game: GameType) => void): HTMLElement 
     const collectedSection = document.createElement('div');
     collectedSection.className = 'collected-section';
 
+    const collectedHeader = document.createElement('div');
+    collectedHeader.className = 'collected-header';
+
     const collectedLabel = document.createElement('div');
     collectedLabel.className = 'collected-label';
-    collectedLabel.textContent = 'My Collection:';
-    collectedSection.appendChild(collectedLabel);
+    collectedLabel.textContent = `My Collection (${collected.length}):`;
+    collectedHeader.appendChild(collectedLabel);
 
+    // Visit habitat button
+    const habitatBtn = document.createElement('button');
+    habitatBtn.className = 'habitat-btn';
+    habitatBtn.textContent = '🏡 Visit';
+    habitatBtn.onclick = (e) => {
+      e.stopPropagation();
+      playClick();
+      onSelectGame('habitat');
+    };
+    collectedHeader.appendChild(habitatBtn);
+
+    collectedSection.appendChild(collectedHeader);
+
+    // Tappable animal grid
     const collectedAnimals = document.createElement('div');
     collectedAnimals.className = 'collected-animals';
-    collectedAnimals.textContent = collected.join(' ');
+
+    collected.forEach((emoji) => {
+      const animalBtn = document.createElement('button');
+      animalBtn.className = 'animal-btn';
+      animalBtn.textContent = emoji;
+      animalBtn.onclick = (e) => {
+        e.stopPropagation();
+        playAnimalSound(emoji);
+        // Add bounce animation
+        animalBtn.classList.add('bounce');
+        setTimeout(() => animalBtn.classList.remove('bounce'), 300);
+      };
+      collectedAnimals.appendChild(animalBtn);
+    });
+
     collectedSection.appendChild(collectedAnimals);
+
+    // Hint to visit habitat
+    const hint = document.createElement('div');
+    hint.className = 'collected-hint';
+    hint.textContent = '👆 Tap animals to hear them!';
+    collectedSection.appendChild(hint);
 
     menu.appendChild(collectedSection);
   }
